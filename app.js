@@ -114,3 +114,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
+
+// Находим все кнопки "Добавить в корзину"
+const addToCartButtons = document.querySelectorAll('.add-card');
+
+// Для каждой кнопки добавляем обработчик события клика
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Изменяем текст кнопки на "Добавлено"
+        button.innerText = 'Добавлено';
+        // Блокируем кнопку, чтобы её нельзя было нажать снова
+        button.disabled = true;
+    });
+});
