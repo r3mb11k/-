@@ -1,0 +1,496 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FEF6EB;
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden;
+}
+
+
+html {
+    overflow: auto; /* Включает прокрутку */
+    scrollbar-width: none; /* Скрывает полосу прокрутки в Firefox */
+  }
+  
+  html::-webkit-scrollbar {
+    display: none; /* Скрывает полосу прокрутки в Chrome, Safari и новых версиях Edge */
+  }
+  
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF8E7;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 80px;
+    z-index: 1;
+}
+
+.header ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    position: relative;
+}
+
+.header ul li {
+    margin-right: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 3px solid transparent;
+
+}
+.basket-menu{
+    position: relative;
+}
+
+
+.basket-body {
+    position: absolute;
+    top: 70px;
+    background-color: #ffffff;
+    left: 270px;
+    width: 300px;
+    max-height: 400px; /* Максимальная высота корзины */
+    overflow-y: scroll; /* Включение вертикальной прокрутки */
+    overflow-x: hidden; /* Отключение горизонтальной прокрутки */
+    color: black;
+    border-radius: 25px;
+    display: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.basket-body::-webkit-scrollbar {
+    display: none; /* Скрыть полосу прокрутки вебкит-браузеров (Chrome, Safari) */
+}
+
+#basket-items {
+    padding: 10px;
+}
+.basket-item {
+    position: relative;
+    top: 40px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 270px;
+    height: 50px;
+    margin-left: 15px;
+}
+
+.basket-footer {
+    padding: 10px;
+}
+
+.basket-body.visible {
+    opacity: 1;
+    transform: calc( 100% + 30px);
+}
+
+.buy-basket {
+    position: relative;
+    left: 65px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.basket-h1 {
+    position: absolute;
+    font-size: 18px;
+    top: 10px;
+    left: 15px;
+}
+
+
+.header ul li:hover {
+    border-bottom: 3px solid #ebd2b0;
+}
+
+.logo {
+    font-size: 36px;
+    transition: all 0.5s ease-in-out;
+    font-weight: 900;
+}
+
+
+
+.header-search {
+    width: 250px;
+    height: 30px;
+    outline: none;
+    border-radius: 15px;
+    border: 1px solid #ebd2b0;
+    margin-right: 30px;
+    color: black;
+    padding-left: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.header-search:hover {
+    transform: scale(1.1);
+}
+
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.entry {
+    font-family: "Amatic SC", sans-serif;
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    font-weight: 600;
+    border: 1px solid #ebd2b0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.entry:hover {
+    transform: scale(1.1);
+}
+/* Главная стр */
+
+.main {
+    position: relative;
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('https://feedsmart.ru/sites/default/files/articles/mozhno-li-sobakam-koshachii-korm.jpg');
+}
+
+.main-body {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 85px;
+    width: 650px;
+    margin-bottom: 20px;
+
+}
+
+.info {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    width: 750px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.price {
+    font-family: "Montserrat", sans-serif;
+    width: 250px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgb(211, 211, 87);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0,0,0, 0.3);
+    color: black;
+}
+
+.price:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(255, 238, 3, 0.5);
+}
+
+.advantage1 {
+    position: absolute;
+    height: 100px;
+    width: 520px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    bottom: -190px;
+}
+
+.advantage1,
+.advantage2,
+.advantage3 {
+    transition: all 0.5s ease-in-out;
+}
+
+.advantage1:hover,
+.advantage2:hover,
+.advantage3:hover {
+    transform: scale(1.1);
+}
+
+.advantage2 {
+    position: absolute;
+    height: 100px;
+    width: 520px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    bottom: -190px;
+    left: 600px;
+}
+
+.advantage3 {
+    position: absolute;
+    height: 100px;
+    width: 520px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    bottom: -190px;
+    left: 1200px;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.advantage1-p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    font-weight: 500;
+}
+
+h3 {
+    position: absolute;
+    color: aqua;
+    right: 15px;
+    top: 10px;
+    font-size: 30px;
+}
+
+
+/* карточка товаров */
+
+.wrapper-content {
+    width: 100%; /* Устанавливаем ширину обертки */
+    box-sizing: border-box; /* Включаем в расчет ширины и высоты паддинги */
+}
+
+.category {
+    position: relative;
+    font-size: 30px;
+    margin-left: 130px;
+    margin-bottom: 20px;
+
+}
+
+.content {
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex; /* Используем flexbox для выравнивания карточек *//* Выравниваем карточки по центру */
+}
+
+.card {
+    position: relative;
+    margin-right: 30px;
+    width: 250px; /* Фиксированная ширина карточки */
+    box-sizing: border-box; /* Включаем в расчет ширины и высоты паддинги */
+}
+
+img {
+    width: 200px; /* Ширина изображения равна ширине карточки */
+    height: 250px
+}
+
+.name {
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Ограничиваем текст двумя строками */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 50px;
+}
+
+.price-card{
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+.add-card {
+    margin-left: 40px;
+    background-color: #007BFF; /* Синий фон кнопки */
+    color: white; /* Белый цвет текста */
+    border: none; /* Убираем границу */
+    border-radius: 15px;
+    width: 170px;
+    height: 40px;
+    cursor: pointer; /* Курсор в виде указателя */
+    transition: all 0.5s ease-in-out; /* Анимация для фона кнопки */
+    font-weight: 700;
+}
+
+.price-kg {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.8;
+}
+.add-card:hover {
+    background-color: #0056b3; /* Темно-синий фон при наведении */
+    transform: scale(1.1);
+}
+
+
+/* вход */
+
+.login-reg {
+    background: url('https://baldezh.top/uploads/posts/2021-04/1618519660_20-funart_pro-p-oboi-fon-anime-priroda-20.jpg');
+    background-size: cover; /* Растягиваем изображение на всю площадь элемента */
+    background-position: center; /* Размещаем изображение по центру */
+    height: 100vh;
+}
+
+.body-log{
+    border-radius: 20px;
+    height: 400px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(139, 139, 139, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.logo-login {
+    top: 10px;
+    font-size: 35px;
+    font-weight: 900;
+    color: #ffffff;
+    position: relative;
+    margin-bottom: 60px;
+    width: 165px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.log {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(94, 94, 94);
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+input {
+    color: white;
+}
+
+.pass {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(94, 94, 94);
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+.remember-forgot {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.left-f {
+display: flex;
+}
+
+.left-f input {
+    margin-right: 5px;
+}
+
+.left-f p{
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+}
+
+.remember-forgot a:hover {
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.entry-log {
+    width: 150px;
+    height: 45px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    background-color: orange;
+    cursor: pointer;
+    border: 0;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+}
+
+.entry-log:hover {
+    transform: scale(1.1);
+}
+
+.notacc {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+    color: black;
+}
+
+.notacc:hover {
+    color: #ffffff;
+    opacity: 0.5;
+}
